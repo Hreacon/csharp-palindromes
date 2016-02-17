@@ -14,5 +14,12 @@ namespace PalindromesNS
       Assert.Equal(2, queen.GetY());
     }
     /**/
+
+    [Fact]
+    public void Palindrome_ForRacecar_true()
+    {
+      Assert.Equal(true, Palindromes.Do("racecar"));
+      Assert.Equal(false, Palindromes.Do("Gibbity"));
+    }
   }
 }
