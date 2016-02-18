@@ -8,7 +8,13 @@ namespace PalindromesNS
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["header.cshtml"];
+        return View["play.cshtml"];
+      };
+      Post["/result"] = _ => {
+        string palindrome = Request.Form["palindrome"];
+        string output = palindrome + " is not a palindrome";
+        if(Palindromes.Do(palindrome)) output = palindrome + " is a palindrome";
+        return View["result.cshtml", output ];
       };
     }
   }
